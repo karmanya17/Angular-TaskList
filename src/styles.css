@@ -2,13 +2,15 @@
 body{
     margin:0px;
     padding:0px;
+    background:linear-gradient(-160deg,#585de7 60%,#e46b6c 50%);
 }
 .container-fluid{
-    height:100vh;
+    height: 100vh;
     margin:0px;
+    padding-bottom: 2rem;
     padding-left:2rem;
     padding-right:2rem;
-    background:linear-gradient(-160deg,#585de7 60%,#e46b6c 50%);
+    
 }
 .clearBtn{
     background-color: White !important;
