@@ -19,10 +19,11 @@
         
         <div class="d-flex justify-content-between p-3 addbtnflex">
             <input id="taskinput" class="taskForm" type="text" [(ngModel)]="taskvalue" placeholder="Enter your task" /> 
-            <button (click)="addTask()" class="btn addbutton">+</button>
+            <button (click)="addTask()" class="btn addbutton" [disabled]="!taskvalue">+</button>
         </div>
         
         <div class="task-div p-3">
+            <div *ngIf="taskArray.length==0" class="p-1">All tasks are Completed !</div>
             <div class="tasks" *ngFor="let task of taskArray;let i = index;">
                 <span><button class="btn p-0 orange" (click)="completeTask(i)">
                         <i *ngIf="task.status==true" class="fa fa-circle fa-lg"></i>

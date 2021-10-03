@@ -16,7 +16,12 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  taskArray:Array<task> = [];
+  taskArray:Array<task> = [
+    {
+      title:"default task",
+      status:true
+    }
+  ];
   addTask(){
     
 
