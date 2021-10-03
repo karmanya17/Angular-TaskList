@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center align-center">
+    <div class="list mt-5 shadows">
+        <div class="dateTaskGrid">
+            <div class="date">
+                <h1 *ngIf="currDay==0" class="mt-2 p-4 purple">Sunday</h1>
+                <h1 *ngIf="currDay==1" class="mt-2 p-4 purple">Monday</h1>
+                <h1 *ngIf="currDay==2" class="mt-2 p-4 purple">Tuesday</h1>
+                <h1 *ngIf="currDay==3" class="mt-2 p-4 purple">Wednesday</h1>
+                <h1 *ngIf="currDay==4" class="mt-2 p-4 purple">Thursday</h1>
+                <h1 *ngIf="currDay==5" class="mt-2 p-4 purple">Friday</h1>
+                <h1 *ngIf="currDay==6" class="mt-2 p-4 purple">Saturday</h1>
+            </div>
+            <div class="totalTask">
+                <h4 *ngIf="totalTask()==0" class="mt-5">No Task</h4>
+                <h4 *ngIf="totalTask()==1" class="mt-5">{{totalTask()}} Task</h4>
+                <h4 *ngIf="totalTask()>1" class="mt-5">{{totalTask()}} Tasks</h4>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-between p-3 addbtnflex">
+            <input id="taskinput" class="taskForm" type="text" [(ngModel)]="taskvalue" placeholder="Enter your task" /> 
+            <button (click)="addTask()" class="btn addbutton">+</button>
+        </div>
+        
+        <div class="task-div p-3">
+            <div class="tasks" *ngFor="let task of taskArray;let i = index;">
+                <span><button class="btn p-0 orange" (click)="completeTask(i)">
+                        <i *ngIf="task.status==true" class="fa fa-circle fa-lg"></i>
+                        <i *ngIf="task.status==false" class="fa fa-check-circle fa-lg popup"></i>
+                    </button></span>
+                <span class="m-1" [ngClass]="{'completedtask':!task.status}">{{task.title}}</span>
+                <span class="trash">
+                    <button class="btn p-0 orange" (click)="deleteTask(i)">
+                        <i class="fa fa-trash fa-lg"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center mt-3">
+    <button class="btn clearBtn shadows" (click)="removeAll()">CLEAR COMPLETED TASK</button>
+</div>

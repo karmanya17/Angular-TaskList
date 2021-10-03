@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin:0px;
+    padding:0px;
+}
+.container-fluid{
+    height:100vh;
+    margin:0px;
+    padding-left:2rem;
+    padding-right:2rem;
+    background:linear-gradient(-160deg,#585de7 60%,#e46b6c 50%);
+}
+.clearBtn{
+    background-color: White !important;
+    color:#585de7 ;
+    font-weight: bold;
+}
+.clearBtn:hover{
+    color:#e46b6c;
+}
