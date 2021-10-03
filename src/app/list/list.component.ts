@@ -41,14 +41,19 @@ export class ListComponent implements OnInit {
     }
     
   }
+
   removeAll(){
-    for(let i=0;i<this.taskArray.length;i++)
-    {
-      if(this.taskArray[i].status==false)
+    console.log(this.taskArray);
+    let completeArr:number[]=[];
+    this.taskArray.forEach((task,index)=>{
+      if(task.status==false)
       {
-        console.log(this.taskArray[i].status);
-        this.taskArray.splice(i,1);
+        completeArr.push(index);
       }
+    });
+    for(var i=completeArr.length-1;i>=0;i--)
+    {
+      this.taskArray.splice(completeArr[i],1);
     }
   }
   totalTask(){
